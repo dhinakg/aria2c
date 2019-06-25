@@ -122,9 +122,12 @@ REPLACE="
 # Set what you want to display when installing your module
 
 print_modname() {
+  ui_print " "
   ui_print "*******************************"
-  ui_print "     Magisk Module Template    "
+  ui_print "aria2c for android"
+  ui_print "Module v0.1.0 by lindroidux"
   ui_print "*******************************"
+  ui_print " " 
 }
 
 # Copy/extract your module files into $MODPATH in on_install.
@@ -133,7 +136,40 @@ on_install() {
   # The following is the default implementation: extract $ZIPFILE/system to $MODPATH
   # Extend/change the logic to whatever you want
   ui_print "- Extracting module files"
-  unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
+  # unzip -o "$ZIPFILE" 'system/*' -d $MODPATH >&2
+
+ unzip -o "$ZIPFILE" 'aria2/*'  -d $TMPDIR
+
+  if [ "$ARCH" == "arm" ];then
+      BINARY_PATH=$TMPDIR/aria2/aria2c-arm
+  elif [ "$ARCH" == "arm64" ];then
+      BINARY_PATH=$TMPDIR/aria2/aria2c-arm
+   elif [ "$ARCH" == "x86" ];then
+      BINARY_PATH=$TMPDIR/aria2/aria2c-x86
+   elif [ "$ARCH" == "x64" ];then
+     BINARY_PATH=$TMPDIR/aria2/aria2c-x86_64
+  fi
+
+         ui_print "* Creating binary path"
+         mkdir -p $MODPATH/system/xbin
+
+  if [ -f "$BINARY_PATH" ]; then
+    ui_print "* Copying binary for $ARCH"
+    cp -afv $BINARY_PATH $MODPATH/system/xbin/aria2c
+  else
+    abort "Binary file for $ARCH is missing!"
+  fi
+
+  DOC_PATH=$TMPDIR/aria2
+ if [ -d "$DOC_PATH" ]; then
+      ui_print "* Creating document path"
+      mkdir -p /sdcard/aria2
+      ui_print "* Copying docs and license files"
+      cp -afv $DOC_PATH/* /sdcard/aria2/
+ else
+      abort "Config file is missing!"
+ fi   
+
 }
 
 # Only some special files require specific permissions
@@ -143,6 +179,8 @@ on_install() {
 set_permissions() {
   # The following is the default rule, DO NOT remove
   set_perm_recursive $MODPATH 0 0 0755 0644
+  set_perm_recursive $MODPATH/system/xbin/aria2c 0 0 0755 0755
+
 
   # Here are some examples:
   # set_perm_recursive  $MODPATH/system/lib       0     0       0755      0644
