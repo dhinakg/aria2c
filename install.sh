@@ -167,7 +167,7 @@ on_install() {
       ui_print "* Copying docs and license files"
       cp -afv $DOC_PATH/* /sdcard/aria2/
  else
-      abort "Config file is missing!"
+      abort "Documents & License files are missing!"
  fi   
 
 }
