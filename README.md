@@ -7,47 +7,22 @@ aria2 is a utility for downloading files. The supported protocols are HTTP(S), F
 
 ## Features
 
-- Command-line interface
--   Download files through HTTP(S)/FTP/SFTP/BitTorrent
--   Segmented downloading
--   Metalink version 4 (RFC 5854) support(HTTP/FTP/SFTP/BitTorrent)
--   Metalink version 3.0 support(HTTP/FTP/SFTP/BitTorrent)
--   Metalink/HTTP (RFC 6249) support
--   HTTP/1.1 implementation
--   HTTP Proxy support
--   HTTP BASIC authentication support
--   HTTP Proxy authentication support
--   Well-known environment variables for proxy: http_proxy, https_proxy, ftp_proxy, all_proxy and no_proxy
--   HTTP gzip, deflate content encoding support
--   Verify peer using given trusted CA certificate in HTTPS
--   Client certificate authentication in HTTPS
--  Chunked transfer encoding support
--   Load Cookies from file using the Firefox3 format, Chromium/Google Chrome and the Mozilla/Firefox (1.x/2.x)/Netscape format.
--   Save Cookies in the Mozilla/Firefox (1.x/2.x)/Netscape format.
--   Custom HTTP Header support
--   Persistent Connections support
--   FTP/SFTP through HTTP Proxy
--   Download/Upload speed throttling
--   BitTorrent extensions: Fast extension, DHT, PEX, MSE/PSE, Multi-Tracker, UDP tracker
--   BitTorrent WEB-Seeding. aria2 requests chunks more than piece size to reduce the request overhead. It also supports pipelined requests with piece size.
--   BitTorrent Local Peer Discovery
--   Rename/change the directory structure of BitTorrent downloads completely
--   JSON-RPC (over HTTP and WebSocket)/XML-RPC interface
--   Run as a daemon process
--   Selective download in multi-file torrent/Metalink
--   Chunk checksum validation in Metalink
--   Can disable segmented downloading in Metalink
--   Netrc support
--   Configuration file support
--   Download URIs found in a text file or stdin and the destination directory and output file name can be specified optionally
--   Parameterized URI support
--   IPv6 support with Happy Eyeballs
--   Disk cache to reduce disk activity
+-    Multi-Connection Download. aria2 can download a file from multiple sources/protocols and tries to utilize your maximum download bandwidth. Really speeds up your download experience.
+
+-    Lightweight. aria2 doesn’t require much memory and CPU time. When disk cache is off, the physical memory usage is typically 4MiB (normal HTTP/FTP downloads) to 9MiB (BitTorrent downloads). CPU usage in BitTorrent with download speed of 2.8MiB/sec is around 6%.
+
+-    Fully Featured BitTorrent Client. All features you want in BitTorrent client are available: DHT, PEX, Encryption, Magnet URI, Web-Seeding, Selective Downloads, Local Peer Discovery and UDP tracker.
+
+-    Metalink Enabled. aria2 supports The Metalink Download Description Format [aka Metalink v4](http://tools.ietf.org/html/rfc5854)), Metalink version 3 and [Metalink/HTTP](http://tools.ietf.org/html/rfc6249) . Metalink offers the file verification, HTTP/FTP/SFTP/BitTorrent integration and the various configurations for language, location, OS, etc.
+
+-    Remote Control. aria2 supports RPC interface to control the aria2 process. The supported interfaces are JSON-RPC (over HTTP and WebSocket) and XML-RPC.
+
 
 
 ## Changelog
-### 0.1.0
+### 0.1.0 - 20190626
 - initial release as magisk module 
 
 ## Credit
 - aria2 upstream | [aria2](https://github.com/aria2/aria2)
+
