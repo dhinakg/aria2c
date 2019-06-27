@@ -164,7 +164,7 @@ on_install() {
  if [ -d "$DOC_PATH" ]; then
       ui_print "* Creating document path"
       mkdir -p /sdcard/aria2
-      ui_print "* Copying docs and license files"
+      ui_print "* Copying docs & license files"
       cp -afv $DOC_PATH/* /sdcard/aria2/
  else
       abort "Documents & License files are missing!"
