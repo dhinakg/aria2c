@@ -15,6 +15,6 @@ aria2c is a utility for downloading files. The supported protocols are HTTP(S), 
 ### 0.1.0 - 20190627
 - initial release as magisk module [using upstream binary version 1.34.0]
 
-## Credit
-- [aria2c upstream](https://github.com/aria2/aria2/releases)
+## Credits
+- [Author](https://gist.github.com/tatsuhiro-t/) of [aria2c upstream](https://github.com/aria2/aria2/releases)
 
