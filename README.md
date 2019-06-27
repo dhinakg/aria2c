@@ -12,7 +12,7 @@ aria2c is a utility for downloading files. The supported protocols are HTTP(S), 
 -    Metalink Enabled.
 
 ## Changelog
-### 0.1.0 - 20190626
+### 0.1.0 - 20190627
 - initial release as magisk module 
 
 ## Credit
