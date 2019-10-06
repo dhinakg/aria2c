@@ -141,13 +141,13 @@ on_install() {
  unzip -o "$ZIPFILE" 'aria2/*'  -d $TMPDIR
 
   if [ "$ARCH" == "arm" ];then
-      BINARY_PATH=$TMPDIR/aria2/aria2c-arm
+      BINARY_PATH=$TMPDIR/aria2/aria2c-android-arm
   elif [ "$ARCH" == "arm64" ];then
-      BINARY_PATH=$TMPDIR/aria2/aria2c-arm
+      BINARY_PATH=$TMPDIR/aria2/aria2c-android-aarch64
    elif [ "$ARCH" == "x86" ];then
-      BINARY_PATH=$TMPDIR/aria2/aria2c-x86
+      BINARY_PATH=$TMPDIR/aria2/aria2c-android-x86
    elif [ "$ARCH" == "x64" ];then
-     BINARY_PATH=$TMPDIR/aria2/aria2c-x86_64
+     BINARY_PATH=$TMPDIR/aria2/aria2c-android-x86_64
   fi
 
          ui_print "* Creating binary path"
