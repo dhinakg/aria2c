@@ -125,7 +125,7 @@ print_modname() {
   ui_print " "
   ui_print "*******************************"
   ui_print "aria2c for android"
-  ui_print "Module v0.1.0 by lindroidux"
+  ui_print "Module v0.1.1 by lindroidux"
   ui_print "*******************************"
   ui_print " " 
 }

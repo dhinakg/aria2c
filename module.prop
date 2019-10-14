@@ -1,6 +1,6 @@
 id=aria2c
 name=aria2c for android
-version=v0.1.0
-versionCode=1
+version=v0.1.1
+versionCode=2
 author=lindroidux
-description=aria2 is a lightweight multi-protocol & multi-source command-line download utility. Upstream version 1.34.0 for arm architecture.
+description=aria2 is a lightweight multi-protocol & multi-source command-line download utility. Upstream version 1.35.0 for aarch64 architecture.
